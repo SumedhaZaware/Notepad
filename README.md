@@ -2,11 +2,11 @@
 In this project💻, I have developed a Notepad📝 using **Python** programming language and **Tkinter** for Graphical user interface(GUI).
 
 Some features included are:
-* **Open new file** (allows the user to open new untitled .txt file)
-* **Cut** (Allows the user to cut the selected content) 
-* **Copy** (Allows the user to copy the selected content) 
-* **Paste** (Allows the user to paste the content which is cut or copied) 
-* **Save** (Allows the user to save the .txt file in the same directory)
+* **Open new file**📂 (allows the user to open new untitled .txt file)
+* **Cut**✂️ (Allows the user to cut the selected content) 
+* **Copy**✂️ (Allows the user to copy the selected content) 
+* **Paste**📋 (Allows the user to paste the content which is cut or copied) 
+* **Save**💾 (Allows the user to save the .txt file in the same directory)
 
 The below screenshots will provide you glimpse about the project.
 
