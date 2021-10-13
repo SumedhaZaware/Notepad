@@ -1,5 +1,5 @@
 # Notepad
-In this project, I have developed a Notepad using **Python** programming language and **Tkinter** for Graphical user interface(GUI).
+In this project💻, I have developed a Notepad📝 using **Python** programming language and **Tkinter** for Graphical user interface(GUI).
 
 Some features included are:
 * **Open new file** (allows the user to open new untitled .txt file)
