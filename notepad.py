@@ -1,18 +1,24 @@
+'''
+Created by: Sumedha Zaware
+'''
+
 # Import the required libraries
 from tkinter import *
 from tkinter.messagebox import showinfo
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 import os
 
-# New filw function
-def newFile():
+def new_file():
+    ''' New file function
+    '''
     global file
     root.title('Untitled - Notepad')
     file = None
     TextArea.delete(1.0,END)
 
-# Open a new file function
-def openFile():
+def open_file():
+    '''Open a new file function
+    '''
     global file
     file = askopenfilename(defaultextension='.txt', filetypes=[('All Files', '*.*'), ('Text Documents', '*.txt')])
     if file == '':
@@ -24,15 +30,15 @@ def openFile():
         TextArea.insert(1.0, f.read())
         f.close()
 
-# Save a file
-def saveFile():
+def save_file():
+    '''Save a file
+    '''
     global file
     if file == None:
         file=asksaveasfilename(initialfile = 'Untitled.txt',defaultextension ='.txt',filetypes=[('All Files','*.*'),('Text Documents','*.txt')])
 
         if file == '':
             file = None
-
         else:
             # save as a new file
             f = open(file,'w')
@@ -46,26 +52,30 @@ def saveFile():
         f.write(TextArea.get(1.0, END))
         f.close()
 
-# Quit the application
-def quitApp():
+def quit_app():
+    '''Quit the application
+    '''
     root.destroy()
 
-# Cut the selected text
 def cut():
+    '''Cut the selected text
+    '''
     TextArea.event_generate(("<<Cut>>"))
 
-# Copy the selected text
 def copy():
+    '''Copy the selected text
+    '''
     TextArea.event_generate(("<<Copy>>"))
 
-# Paste the selected text
 def paste():
+    '''Paste the selected text
+    '''
     TextArea.event_generate(("<<Paste>>"))
 
-# Notification about the notepad
 def about():
+    '''Notification about the notepad
+    '''
     showinfo('Notepad','Notepad By Sumedha Zaware')
-
 
 if __name__ == '__main__':
     # Basic tkinter Setup
@@ -80,16 +90,16 @@ if __name__ == '__main__':
     TextArea.pack(expand=True, fill=BOTH)
 
     # ****MENU BAR STARTS****
-    MenuBar = Menu(root) 
+    MenuBar = Menu(root)
     FileMenu = Menu(MenuBar,tearoff=0)
 
     # FILE MENU
     MenuBar.add_cascade(label = 'File',menu = FileMenu)     # Creating file menu
-    FileMenu.add_command(label = 'New',command=newFile)     # pen new file
-    FileMenu.add_command(label = 'Open',command=openFile)   # Open saved file
-    FileMenu.add_command(label = 'Save',command =saveFile)  # Save a file
+    FileMenu.add_command(label = 'New',command=new_file)     # pen new file
+    FileMenu.add_command(label = 'Open',command=open_file)   # Open saved file
+    FileMenu.add_command(label = 'Save',command =save_file)  # Save a file
     FileMenu.add_separator()                                # add a separator in the file menu
-    FileMenu.add_command(label='Exit',command = quitApp)    # exit the application
+    FileMenu.add_command(label='Exit',command = quit_app)    # exit the application
 
     # EDIT MENU
     EditMenu = Menu(MenuBar,tearoff=0)
